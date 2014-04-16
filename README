@@ -1,0 +1,45 @@
+Copyright (C) 2013 mirage335
+See the end of the file for license conditions.
+See license.txt for HF_Upconverter license conditions.
+
+__Usage__
+High-performance frequency mixer. RF/IF ports are 50Ω. Strongly recommend Oshpark PCB fabrication to preserve stripline impedance.
+
+Direct usage is not recommended. Rather, this circuit should be directly integrated into a complete radio PCB.
+
+Vcc should be 6.5V.
+
+LO input is intended to be a 40Ω 3.3V CMOS clock (ie. Si514/Si570), and should not exceed Vcc on the secondary (high-impedance) side of the step-up ADTT4-1 4:1 balun transformer. Ommitting R1, the LO termination resistor, may or may not affect performance.
+
+__Design__
+Design goal is to achieve a maximum dynamic range mixer with no fine tuning.
+
+Mixer based on research by PA3AKE and G3OOU, as well as the SoftRock Ensemble RX.
+http://martein.home.xs4all.nl/pa3ake/hmode/hmode_mixer.html
+http://www.qsl.net/g3oou/solidstatecircuits9.html
+http://martein.home.xs4all.nl/pa3ake/hmode/adtt1-1.html
+http://martein.home.xs4all.nl/pa3ake/hmode/adtt4-1.html
+http://www.wb5rvz.com/sdr/ensemblerx/
+
+Stripline 14.7423mil wide has been used to achieve characteristic impedance close to 50 ohms, given a dielectric constant of 3.66 for the FR408 substrate, 6.7mil thick dielectric, and 1.4mil thick copper. These specifications are derived from Oshpark's 4-layer board stackup.
+http://support.oshpark.com/support/articles/122263-4-layer-board-stackup-and
+
+Extensive common-mode rejection techniques are employed, including RF transformer common-mode chokes, isolated ground planes, and buried signal transmission lines under heavy ground planes.
+
+USA companies provide all parts in these schematics.
+
+__Copyright__
+This file is part of HF_Upconverter.
+
+HF_Upconverter is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+HF_Upconverter is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with HF_Upconverter.  If not, see <http://www.gnu.org/licenses/>.
